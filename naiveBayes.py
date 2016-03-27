@@ -61,7 +61,66 @@ class NaiveBayesClassifier(classificationMethod.ClassificationMethod):
     """
 
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    # counter = util.Counter()
+    #
+    # for feature in self.features:
+    #   for label in self.legalLabels:
+    #     for fi in [1, 0]:
+    #       counter[(feature, fi, label)] = 0
+    #
+    # for i in range(len(trainingData)):
+    #   pixels = trainingData[i]
+    #   label = trainingLabels[i]
+    #   for pixel in pixels.keys():
+    #     counter[(pixel, pixels[pixel], label)] += 1
+    #
+    # conditionalProbabilities = {}
+    # for k in kgrid:
+    #   for key in counter.keys():
+    #     conditionalProbabilities[(key, k)]
+
+    counterDict = {}
+    prior = util.Counter()
+    for label in self.legalLabels:
+      # prior[label] = 0
+      for feature in self.features:
+        tempCounter = util.Counter()
+        for fi in [0, 1]:
+          tempCounter[fi] = 0
+        counterDict[(feature, label)] = tempCounter
+
+    for i in range(len(trainingData)):
+      featureValues = trainingData[i]
+      label = trainingLabels[i]
+      prior[label] += 1
+      for feature in featureValues.keys():
+        counterDict[(feature, label)][featureValues[feature]] += 1
+
+    self.prior = util.normalize(prior)
+
+    bestCorrectCount = 0
+    bestCondProb = {}
+    for k in kgrid:
+      # compute conditional probabilities for each feature and label, unker k
+      conditionalProbabilities = {}
+      for label in self.legalLabels:
+        for feature in self.features:
+          counterCopy = counterDict[feature, label]
+          counterCopy.incrementAll(counterCopy.keys(), k)
+          conditionalProbabilities[feature, label] = util.normalize(counterCopy)
+
+      # count the accuracy and mark the minimum
+      self.condProb = conditionalProbabilities
+      guesses = self.classify(validationData)
+      correctCount = 0
+      for i in range(len(validationLabels)):
+        if (guesses[i] == validationLabels[i]): correctCount += 1
+      if correctCount > bestCorrectCount:
+        bestCondProb = conditionalProbabilities
+
+    self.condProb = bestCondProb
+
+    # util.raiseNotDefined()
         
   def classify(self, testData):
     """
@@ -89,9 +148,12 @@ class NaiveBayesClassifier(classificationMethod.ClassificationMethod):
     logJoint = util.Counter()
     
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    # util.raiseNotDefined()
+    for label in self.legalLabels:
+      logJoint[label] = math.log(self.prior[label])
+      for key, value in datum.items():
+        logJoint[label] += math.log(self.condProb[key, label][value])
 
-    
     return logJoint
   
   def findHighOddsFeatures(self, label1, label2):
