@@ -62,23 +62,23 @@ class NaiveBayesClassifier(classificationMethod.ClassificationMethod):
 
     "*** YOUR CODE HERE ***"
 
+    # initialize all counters for every given feature-label pair
     counterDict = {}
-    prior = util.Counter()
     for label in self.legalLabels:
-      # prior[label] = 0
       for feature in self.features:
         tempCounter = util.Counter()
         for fi in [0, 1]:
           tempCounter[fi] = 0
         counterDict[(feature, label)] = tempCounter
 
+    # count the frequencies of all possibilities, meanwhile get the prior
+    prior = util.Counter()
     for i in range(len(trainingData)):
       featureValues = trainingData[i]
       label = trainingLabels[i]
       prior[label] += 1
       for feature in featureValues.keys():
         counterDict[(feature, label)][featureValues[feature]] += 1
-
     self.prior = util.normalize(prior)
 
     bestCorrectCount = 0
@@ -134,7 +134,7 @@ class NaiveBayesClassifier(classificationMethod.ClassificationMethod):
     logJoint = util.Counter()
     
     "*** YOUR CODE HERE ***"
-    # util.raiseNotDefined()
+    # compute the log probabilities of all possible labels for the given feature datum
     for label in self.legalLabels:
       logJoint[label] = math.log(self.prior[label])
       for key, value in datum.items():
