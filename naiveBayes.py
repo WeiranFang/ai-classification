@@ -61,23 +61,6 @@ class NaiveBayesClassifier(classificationMethod.ClassificationMethod):
     """
 
     "*** YOUR CODE HERE ***"
-    # counter = util.Counter()
-    #
-    # for feature in self.features:
-    #   for label in self.legalLabels:
-    #     for fi in [1, 0]:
-    #       counter[(feature, fi, label)] = 0
-    #
-    # for i in range(len(trainingData)):
-    #   pixels = trainingData[i]
-    #   label = trainingLabels[i]
-    #   for pixel in pixels.keys():
-    #     counter[(pixel, pixels[pixel], label)] += 1
-    #
-    # conditionalProbabilities = {}
-    # for k in kgrid:
-    #   for key in counter.keys():
-    #     conditionalProbabilities[(key, k)]
 
     counterDict = {}
     prior = util.Counter()
@@ -99,6 +82,7 @@ class NaiveBayesClassifier(classificationMethod.ClassificationMethod):
     self.prior = util.normalize(prior)
 
     bestCorrectCount = 0
+    bestK = 0
     bestCondProb = {}
     for k in kgrid:
       # compute conditional probabilities for each feature and label, unker k
@@ -109,19 +93,21 @@ class NaiveBayesClassifier(classificationMethod.ClassificationMethod):
           counterCopy.incrementAll(counterCopy.keys(), k)
           conditionalProbabilities[feature, label] = util.normalize(counterCopy)
 
-      # count the accuracy and mark the minimum
+      # count the accuracy and mark the conditionalProbabilities with the max accuracy
       self.condProb = conditionalProbabilities
       guesses = self.classify(validationData)
       correctCount = 0
       for i in range(len(validationLabels)):
         if (guesses[i] == validationLabels[i]): correctCount += 1
       if correctCount > bestCorrectCount:
+        bestCorrectCount = correctCount
         bestCondProb = conditionalProbabilities
+        bestK = k
 
     self.condProb = bestCondProb
+    print "***The best K is: ", bestK
+    self.k = bestK
 
-    # util.raiseNotDefined()
-        
   def classify(self, testData):
     """
     Classify the data based on the posterior distribution over labels.
