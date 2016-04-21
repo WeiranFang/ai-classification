@@ -254,6 +254,9 @@ def readCommand( argv ):
   elif(options.classifier == 'minicontest'):
     import minicontest
     classifier = minicontest.contestClassifier(legalLabels)
+  elif(options.classifier == 'ann'):
+    import ann
+    classifier = ann.NeuralNetworkClassifier(legalLabels, options.iterations)
   else:
     print "Unknown classifier:", options.classifier
     print USAGE_STRING
@@ -347,6 +350,6 @@ def runClassifier(args, options):
 
 if __name__ == '__main__':
   # Read input
-  args, options = readCommand( sys.argv[1:] ) 
+  args, options = readCommand( sys.argv[1:] )
   # Run classifier
   runClassifier(args, options)

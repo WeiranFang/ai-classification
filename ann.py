@@ -1,0 +1,146 @@
+import util
+import math
+import random
+PRINT = True
+
+class NeuralNetworkClassifier:
+  """
+  Neural Network classifier.
+
+  Note that the variable 'datum' in this code refers to a counter of features
+  (not to a raw samples.Datum).
+  """
+  def __init__( self, legalLabels, max_iterations):
+    self.legalLabels = legalLabels
+    self.type = "ann"
+    self.max_iterations = max_iterations
+
+    self.alpha = 3.0 # learning rate
+    self.randomRange = 1
+    self.theta1 = util.Counter() # Weights for the input layer
+    self.theta2 = util.Counter() # Weights for the hidden layer
+    self.a1, self.a2, self.a3, self.y = util.Counter() # Units of three layers
+
+
+  def train( self, trainingData, trainingLabels, validationData, validationLabels ):
+    """
+    The training loop for the perceptron passes through the training data several
+    times and updates the weight vector for each label based on classification errors.
+    See the project description for details.
+
+    Use the provided self.weights[label] data structure so that
+    the classify method works correctly. Also, recall that a
+    datum is a counter from features to values for those features
+    (and thus represents a vector a values).
+    """
+
+    self.features = trainingData[0].keys() # could be useful later
+    # DO NOT ZERO OUT YOUR WEIGHTS BEFORE STARTING TRAINING, OR
+    # THE AUTOGRADER WILL LIKELY DEDUCT POINTS.
+
+    # Set number of units for three layers
+    self.s1 = len(self.features)
+    self.s2 = len(self.features)
+    self.s3 = len(self.legalLabels)
+
+    # First of all, randomly initialize weights theta1 and theta2
+    for i in range(self.s1 + 1):
+      for j in range(1, self.s2 + 1):
+        self.theta1[(j, i)] = self.getRandom()
+
+    for i in range(self.s2 + 1):
+      for j in range(1, self.s3 + 1):
+        self.theta2[(j, i)] = self.getRandom()
+
+    for iteration in range(self.max_iterations):
+      print "Starting iteration ", iteration, "..."
+      for i in range(len(trainingData)):
+        features = trainingData[i]
+        label = trainingLabels[i]
+        self.setY(label)
+
+        # Use forward propagation to get the output layer units
+        self.setA1(features)
+        self.setA2()
+        self.setA3()  # a3 is the output layer units
+
+        # Use backward propagation
+        delta3 = self.a3 - self.y
+
+
+
+  def setY(self, label):
+    """
+    Convert label to vector.
+    e.g. If label is 6, then the vector should be [0,0,0,0,0,0,1,0,0,0]
+    """
+    for i in range(len(self.legalLabels)):
+      self.y[i + 1] = 0
+    self.y[label + 1] = 1
+
+  def setA1(self, features):
+    self.a1[0] = 1 # Add bias
+    for i in range(1, self.s1 + 1):
+      self.a1[i] = features[i - 1]
+
+  def setA2(self):
+    self.a2[0] = 1 # Add bias
+    for j in range(1, self.s2 + 1):
+      z = 0
+      for i in range(len(self.a1)):
+        z += self.theta1[(j, i)] * self.a1[i]
+      self.a2[j] = sigmoid(z)
+
+  def setA3(self):
+    for j in range(1, self.s3 + 1):
+      z= 0
+      for i in range(len(self.a2)):
+        z += self.theta2[(j, i)] * self.a2[i]
+      self.a3[j] = sigmoid(z)
+
+  def forwardprop(self, features):
+    """
+    Use forward propagation to get H(x)
+    """
+    self.setA1(features)
+    self.setA2()
+    self.setA3() # a3 is the output layer units
+
+  def getRandom(self):
+    """
+    Get random number between [-randomRange, randomRange]
+    """
+    return random.random() * 2 * self.randomRange - self.randomRange
+
+  def classify(self, data ):
+    """
+    Classifies each datum as the label that most closely matches the prototype vector
+    for that label.  See the project description for details.
+
+    Recall that a datum is a util.counter...
+    """
+    guesses = []
+    for datum in data:
+      vectors = util.Counter()
+      for l in self.legalLabels:
+        vectors[l] = self.weights[l] * datum
+      guesses.append(vectors.argMax())
+    return guesses
+
+
+  def findHighWeightFeatures(self, label):
+    """
+    Returns a list of the 100 features with the greatest weight for some label
+    """
+    featuresWeights = []
+
+    "*** YOUR CODE HERE ***"
+    util.raiseNotDefined()
+
+    return featuresWeights
+
+def sigmoid(z):
+  """
+  Helper function: calculate the sigmoid of z
+  """
+  return 1.0 / (1.0 + math.exp(-z))
