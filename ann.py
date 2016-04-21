@@ -16,6 +16,7 @@ class NeuralNetworkClassifier:
     self.max_iterations = max_iterations
 
     self.alpha = 3.0 # learning rate
+    self.lmbda = 0
     self.randomRange = 1
     self.theta1 = util.Counter() # Weights for the input layer
     self.theta2 = util.Counter() # Weights for the hidden layer
@@ -44,14 +45,14 @@ class NeuralNetworkClassifier:
     self.s3 = len(self.legalLabels)
 
     # First of all, randomly initialize weights theta1 and theta2
-    for i in range(self.s1 + 1):
-      for j in range(1, self.s2 + 1):
-        self.theta1[(j, i)] = self.getRandom()
+    for i in range(1, self.s2 + 1):
+      for j in range(self.s1 + 1):
+        self.theta1[(i, j)] = self.getRandom()
+    for i in range(1, self.s3 + 1):
+      for j in range(self.s2 + 1):
+        self.theta2[(i, j)] = self.getRandom()
 
-    for i in range(self.s2 + 1):
-      for j in range(1, self.s3 + 1):
-        self.theta2[(j, i)] = self.getRandom()
-
+    bigDelta1, bigDelta2 = util.Counter()
     for iteration in range(self.max_iterations):
       print "Starting iteration ", iteration, "..."
       for i in range(len(trainingData)):
@@ -64,9 +65,40 @@ class NeuralNetworkClassifier:
         self.setA2()
         self.setA3()  # a3 is the output layer units
 
-        # Use backward propagation
+        # Use backward propagation to calculate delta for each units
         delta3 = self.a3 - self.y
+        delta2 = util.Counter()
+        for j in range(1, self.s3 + 1):
+          for k in range(self.s2 + 1):
+            delta2[k] += self.theta2[(j, k)] * delta3[j]
 
+        # Calculate big delta for layer one
+        for j in range(1, self.s2 + 1):
+          for k in range(self.s1 + 1):
+            bigDelta1[(j, k)] += self.a1[k] * delta2[j]
+
+        # Calculate big delta for layer two
+        for j in range(1, self.s3 + 1):
+          for k in range(self.s2 + 1):
+            bigDelta2[(j, k)] += self.a2[k] * delta3[j]
+
+      # Calculate the partial derivatives of the cost function corresponding to each theta,
+      # and then update theta to minimize the cost
+      D1, D2 = util.Counter()
+      for i in range(1, self.s2 + 1):
+        for j in range(self.s1 + 1):
+          if j == 0:
+            D1[(i, j)] = bigDelta1[(i, j)] / len(trainingData)
+          else:
+            D1[(i, j)] = bigDelta1[(i, j)] / len(trainingData) + self.lmbda * self.theta1[(i, j)]
+          self.theta1[(i, j)] -= self.alpha * D1[(i, j)]
+      for i in range(1, self.s3 + 1):
+        for j in range(self.s2 + 1):
+          if j == 0:
+            D2[(i, j)] = bigDelta2[(i, j)] / len(trainingData)
+          else:
+            D2[(i, j)] = bigDelta2[(i, j)] / len(trainingData) + self.lmbda * self.theta2[(i, j)]
+          self.theta2[(i, j)] -= self.alpha * D2[(i, j)]
 
 
   def setY(self, label):
@@ -127,17 +159,6 @@ class NeuralNetworkClassifier:
       guesses.append(vectors.argMax())
     return guesses
 
-
-  def findHighWeightFeatures(self, label):
-    """
-    Returns a list of the 100 features with the greatest weight for some label
-    """
-    featuresWeights = []
-
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
-
-    return featuresWeights
 
 def sigmoid(z):
   """
