@@ -161,7 +161,12 @@ class Counter(dict):
     """
     for key in keys:
       self[key] += count
-  
+
+  def multiplyAll(self, val):
+    for key in self.keys():
+      self[key] *= val
+
+
   def argMax(self):
     """
     Returns the key with the highest value.
