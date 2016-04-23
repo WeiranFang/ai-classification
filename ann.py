@@ -16,7 +16,7 @@ class NeuralNetworkClassifier:
     self.type = "ann"
     self.max_iterations = max_iterations
 
-    self.alpha = 3.0 # learning rate
+    self.alpha = 0.1 # learning rate
     self.lmbda = 0.1
     # self.randomRange = 0.5
     self.theta1 = util.Counter() # Weights for the input layer
@@ -60,8 +60,10 @@ class NeuralNetworkClassifier:
     bigDelta2 = util.Counter()
     for iteration in range(self.max_iterations):
       print "Starting iteration ", iteration, "..."
-      size = len(trainingData) / 10
+
+      size = 10
       for begin in range(0, len(trainingData), size):
+        # self.alpha /= 1.5
         for i in range(begin, begin + size):
           features = trainingData[i]
           label = trainingLabels[i]
@@ -72,17 +74,13 @@ class NeuralNetworkClassifier:
           self.setA2()
           self.setA3()  # a3 is the output layer units
 
-          # print "a1: ", self.a1
-          # print "a3: ", self.a3
-          # print "y: ", self.y
-          # print "label: ", label
-
           # Use backward propagation to calculate delta for each units
           delta3 = self.a3 - self.y
           delta2 = util.Counter()
           for j in range(1, self.s3 + 1):
             for k in range(self.s2 + 1):
               delta2[k] += self.theta2[(j, k)] * delta3[j]
+              bigDelta2[(j, k)] += self.a2[k] * delta3[j]
 
           # Calculate big delta for layer one
           for j in range(1, self.s2 + 1):
@@ -90,28 +88,28 @@ class NeuralNetworkClassifier:
               bigDelta1[(j, k)] += self.a1[k] * delta2[j]
 
           # Calculate big delta for layer two
-          for j in range(1, self.s3 + 1):
-            for k in range(self.s2 + 1):
-              bigDelta2[(j, k)] += self.a2[k] * delta3[j]
+          # for j in range(1, self.s3 + 1):
+          #   for k in range(self.s2 + 1):
+          #     bigDelta2[(j, k)] += self.a2[k] * delta3[j]
 
         # Calculate the partial derivatives of the cost function corresponding to each theta,
         # and then update theta to minimize the cost
-        D1 = util.Counter()
-        D2 = util.Counter()
+        # D1 = util.Counter()
+        # D2 = util.Counter()
         for i in range(1, self.s2 + 1):
           for j in range(self.s1 + 1):
             if j == 0:
-              D1[(i, j)] = bigDelta1[(i, j)] / len(trainingData)
+              D1 = bigDelta1[(i, j)] / size
             else:
-              D1[(i, j)] = bigDelta1[(i, j)] / len(trainingData) + self.lmbda * self.theta1[(i, j)]
-            self.theta1[(i, j)] -= self.alpha * D1[(i, j)]
+              D1 = bigDelta1[(i, j)] / size + self.lmbda * self.theta1[(i, j)]
+            self.theta1[(i, j)] -= self.alpha * D1
         for i in range(1, self.s3 + 1):
           for j in range(self.s2 + 1):
             if j == 0:
-              D2[(i, j)] = bigDelta2[(i, j)] / len(trainingData)
+              D2 = bigDelta2[(i, j)] / size
             else:
-              D2[(i, j)] = bigDelta2[(i, j)] / len(trainingData) + self.lmbda * self.theta2[(i, j)]
-            self.theta2[(i, j)] -= self.alpha * D2[(i, j)]
+              D2 = bigDelta2[(i, j)] / size + self.lmbda * self.theta2[(i, j)]
+            self.theta2[(i, j)] -= self.alpha * D2
 
 
   def setY(self, label):
