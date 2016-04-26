@@ -64,13 +64,70 @@ def enhancedFeatureExtractorDigit(datum):
   for this datum (datum is of type samples.Datum).
   
   ## DESCRIBE YOUR ENHANCED FEATURES HERE...
-  
+  1. Add a gradient feature for each pixel that checks whether a certain pixel's gradient is increasing
+  for both direction, if it's increasing, set 1, otherwise set 0.
+  2.
   ##
   """
-  features =  basicFeatureExtractorDigit(datum)
+  # features =  basicFeatureExtractorDigit(datum)
 
   "*** YOUR CODE HERE ***"
-  
+
+  # # Compute edges
+  # for x in range(1, DIGIT_DATUM_WIDTH - 1):
+  #   for y in range(1, DIGIT_DATUM_HEIGHT - 1):
+  #     # if datum.getPixel(x, y) > 0:
+  #     features[("hasN", x, y)] = 1 if datum.getPixel(x, y - 1) > 0 else 0
+  #     features[("hasS", x, y)] = 1 if datum.getPixel(x, y + 1) > 0 else 0
+  #     features[("hasW", x, y)] = 1 if datum.getPixel(x - 1, y) > 0 else 0
+  #     features[("hasE", x, y)] = 1 if datum.getPixel(x + 1, y) > 0 else 0
+  #
+  #     # features[("horiz", x, y)] = int(datum.getPixel(x, y) > datum.getPixel(x - 1, y))
+  #     #
+  #     # features[("verti", x, y)] = int(datum.getPixel(x, y) > datum.getPixel(x, y - 1))
+
+  a = datum.getPixels()
+
+  features = util.Counter()
+  rowCounter = util.Counter()
+  colCounter = util.Counter()
+  for x in range(DIGIT_DATUM_WIDTH):
+    for y in range(DIGIT_DATUM_HEIGHT):
+      if datum.getPixel(x, y) > 0:
+        features[(x, y)] = 1
+        rowCounter[y] += 1
+        colCounter[x] += 1
+      else:
+        features[(x, y)] = 0
+
+      # Check whether the gradient is increasing
+      if x > 0 and y > 0:
+        features[("w2e", x, y)] = int(datum.getPixel(x, y) > datum.getPixel(x - 1, y)) # check from west to east
+        features[("s2n", x, y)] = int(datum.getPixel(x, y) > datum.getPixel(x, y - 1)) # check from south to north
+
+  # Check if each row or col has more than 10 pixels with gray or black
+  for x in range(DIGIT_DATUM_WIDTH):
+    for y in range(DIGIT_DATUM_HEIGHT):
+      features["row", y] = 1 if rowCounter[y] >= 10 else 0
+      features["col", x] = 1 if colCounter[x] >= 10 else 0
+
+  return features
+
+
+def contestFeatureExtractorDigit(datum):
+  """
+  Specify features to use for the minicontest
+  """
+  features = basicFeatureExtractorDigit(datum)
+  return features
+
+
+def enhancedFeatureExtractorFace(datum):
+  """
+  Your feature extraction playground for faces.
+  It is your choice to modify this.
+  """
+  features = basicFeatureExtractorFace(datum)
   return features
 
 
@@ -177,6 +234,7 @@ def readCommand( argv ):
   parser.add_option('-a', '--autotune', help=default("Whether to automatically tune hyperparameters"), default=False, action="store_true")
   parser.add_option('-i', '--iterations', help=default("Maximum iterations to run training"), default=3, type="int")
   parser.add_option('-s', '--test', help=default("Amount of test data to use"), default=TEST_SET_SIZE, type="int")
+  parser.add_option('-p', '--alpha', help=default("Learning rate for neural network"), default=1.0, type="float")
 
   options, otherjunk = parser.parse_args(argv)
   if len(otherjunk) != 0: raise Exception('Command line input not understood: ' + str(otherjunk))
@@ -256,7 +314,8 @@ def readCommand( argv ):
     classifier = minicontest.contestClassifier(legalLabels)
   elif(options.classifier == 'ann'):
     import ann
-    classifier = ann.NeuralNetworkClassifier(legalLabels, options.iterations)
+    classifier = ann.NeuralNetworkClassifier(legalLabels, options.iterations, options.alpha)
+    print "learning rate for ann: ", options.alpha
   else:
     print "Unknown classifier:", options.classifier
     print USAGE_STRING
