@@ -1,7 +1,8 @@
 import util
 import math
+import operator
 import random
-import numpy
+import numpy as np
 PRINT = True
 
 class NeuralNetworkClassifier:
@@ -11,136 +12,77 @@ class NeuralNetworkClassifier:
   Note that the variable 'datum' in this code refers to a counter of features
   (not to a raw samples.Datum).
   """
-  def __init__( self, legalLabels, max_iterations):
+  def __init__( self, legalLabels, max_iterations, alpha):
     self.legalLabels = legalLabels
     self.type = "ann"
     self.max_iterations = max_iterations
-
-    self.alpha = 0.1 # learning rate
-    self.lmbda = 0.1
-    # self.randomRange = 0.5
-    self.theta1 = util.Counter() # Weights for the input layer
-    self.theta2 = util.Counter() # Weights for the hidden layer
-    self.a1 = util.Counter()
-    self.a2 = util.Counter()
-    self.a3 = util.Counter()
-    self.y = util.Counter()
-
+    self.alpha = alpha
 
   def train( self, trainingData, trainingLabels, validationData, validationLabels ):
     """
-    The training loop for the perceptron passes through the training data several
-    times and updates the weight vector for each label based on classification errors.
-    See the project description for details.
-
-    Use the provided self.weights[label] data structure so that
-    the classify method works correctly. Also, recall that a
-    datum is a counter from features to values for those features
-    (and thus represents a vector a values).
+    The training loop for the ann passes through the training data several
+    times and updates the theta vector and bias vector to minimize the cost.
     """
 
     self.features = trainingData[0].keys() # could be useful later
-    # DO NOT ZERO OUT YOUR WEIGHTS BEFORE STARTING TRAINING, OR
-    # THE AUTOGRADER WILL LIKELY DEDUCT POINTS.
 
     # Set number of units for three layers
     self.s1 = len(self.features)
-    self.s2 = len(self.features)
+    self.s2 = 30
     self.s3 = len(self.legalLabels)
 
-    # Use gaussian distribution to initialize weights for theta1 and theta2
-    for i in range(1, self.s2 + 1):
-      for j in range(self.s1 + 1):
-        self.theta1[(i, j)] = random.gauss(0,1)
-    for i in range(1, self.s3 + 1):
-      for j in range(self.s2 + 1):
-        self.theta2[(i, j)] = random.gauss(0,1)
+    # Initialize bias vector and theta vector
+    self.bias1 = np.random.randn(self.s2, 1)
+    self.bias2 = np.random.randn(self.s3, 1)
+    self.theta1 = np.random.randn(self.s2, self.s1)
+    self.theta2 = np.random.randn(self.s3, self.s2)
 
-    bigDelta1 = util.Counter()
-    bigDelta2 = util.Counter()
-    for iteration in range(self.max_iterations):
+    size = 10  # smaller section size
+    # alpha = 3.0  # learning rate
+    n = len(trainingData)
+
+    for iteration in xrange(self.max_iterations):
       print "Starting iteration ", iteration, "..."
+      # Seperate one big data set into smaller sets
+      for begin in range(0, n, size):
 
-      size = 10
-      for begin in range(0, len(trainingData), size):
-        # self.alpha /= 1.5
+        dev_b1 = np.zeros(self.bias1.shape)
+        dev_b2 = np.zeros(self.bias2.shape)
+        dev_t1 = np.zeros(self.theta1.shape)
+        dev_t2 = np.zeros(self.theta2.shape)
+
         for i in range(begin, begin + size):
           features = trainingData[i]
           label = trainingLabels[i]
-          self.setY(label)
+          x = np.reshape(features.values(), (len(self.features), 1))
+          y = np.zeros((10, 1))
+          y[label] = 1.0
 
-          # Use forward propagation to get the output layer units
-          self.setA1(features)
-          self.setA2()
-          self.setA3()  # a3 is the output layer units
+          # forward propagation
+          a1 = x
+          z1 = np.dot(self.theta1, a1) + self.bias1
+          a2 = sigmoid(z1)
+          z2 = np.dot(self.theta2, a2) + self.bias2
+          a3 = sigmoid(z2)
 
-          # Use backward propagation to calculate delta for each units
-          delta3 = self.a3 - self.y
-          delta2 = util.Counter()
-          for j in range(1, self.s3 + 1):
-            for k in range(self.s2 + 1):
-              delta2[k] += self.theta2[(j, k)] * delta3[j]
-              bigDelta2[(j, k)] += self.a2[k] * delta3[j]
+          # backward propagation
+          delta = (a3 - y) * sigmoidPrime(z2)
+          delta_b2  = delta
+          delta_t2 = np.dot(delta, a2.transpose())
+          delta = np.dot(self.theta2.transpose(), delta) * sigmoidPrime(z1)
+          delta_b1 = delta
+          delta_t1 = np.dot(delta, a1.transpose())
 
-          # Calculate big delta for layer one
-          for j in range(1, self.s2 + 1):
-            for k in range(self.s1 + 1):
-              bigDelta1[(j, k)] += self.a1[k] * delta2[j]
+          dev_b1 = dev_b1 + delta_b1
+          dev_b2 = dev_b2 + delta_b2
+          dev_t1 = dev_t1 + delta_t1
+          dev_t2 = dev_t2 + delta_t2
 
-          # Calculate big delta for layer two
-          # for j in range(1, self.s3 + 1):
-          #   for k in range(self.s2 + 1):
-          #     bigDelta2[(j, k)] += self.a2[k] * delta3[j]
+        self.theta1 = self.theta1 - (self.alpha / size) * dev_t1
+        self.theta2 = self.theta2 - (self.alpha / size) * dev_t2
+        self.bias1 = self.bias1 - (self.alpha / size) * dev_b1
+        self.bias2 = self.bias2 - (self.alpha / size) * dev_b2
 
-        # Calculate the partial derivatives of the cost function corresponding to each theta,
-        # and then update theta to minimize the cost
-        # D1 = util.Counter()
-        # D2 = util.Counter()
-        for i in range(1, self.s2 + 1):
-          for j in range(self.s1 + 1):
-            if j == 0:
-              D1 = bigDelta1[(i, j)] / size
-            else:
-              D1 = bigDelta1[(i, j)] / size + self.lmbda * self.theta1[(i, j)]
-            self.theta1[(i, j)] -= self.alpha * D1
-        for i in range(1, self.s3 + 1):
-          for j in range(self.s2 + 1):
-            if j == 0:
-              D2 = bigDelta2[(i, j)] / size
-            else:
-              D2 = bigDelta2[(i, j)] / size + self.lmbda * self.theta2[(i, j)]
-            self.theta2[(i, j)] -= self.alpha * D2
-
-
-  def setY(self, label):
-    """
-    Convert label to vector.
-    e.g. If label is 6, then the vector should be [0,0,0,0,0,0,1,0,0,0]
-    """
-    for i in range(len(self.legalLabels)):
-      self.y[i + 1] = 0
-    self.y[label + 1] = 1
-
-  def setA1(self, features):
-    self.a1[0] = 1 # Add bias
-    values = features.values()
-    for i in range(1, self.s1 + 1):
-      self.a1[i] = values[i - 1]
-
-  def setA2(self):
-    self.a2[0] = 1 # Add bias
-    for j in range(1, self.s2 + 1):
-      z = 0
-      for i in range(len(self.a1)):
-        z += self.theta1[(j, i)] * self.a1[i]
-      self.a2[j] = sigmoid(z)
-
-  def setA3(self):
-    for j in range(1, self.s3 + 1):
-      z= 0
-      for i in range(len(self.a2)):
-        z += self.theta2[(j, i)] * self.a2[i]
-      self.a3[j] = sigmoid(z)
 
   def classify(self, data):
     """
@@ -151,14 +93,16 @@ class NeuralNetworkClassifier:
     """
     guesses = []
     for datum in data:
-      self.setA1(datum)
-      self.setA2()
-      self.setA3()
-      guesses.append(self.a3.argMax() - 1)
+      a1 = np.reshape(datum.values(), (len(datum), 1))
+      a2 = sigmoid(np.dot(self.theta1, a1) + self.bias1)
+      a3 = sigmoid(np.dot(self.theta2, a2) + self.bias2)
+      guesses.append(np.argmax(a3))
     return guesses
 
 def sigmoid(z):
-  """
-  Helper function: calculate the sigmoid of z
-  """
-  return 1.0 / (1.0 + numpy.exp(-z))
+  """The sigmoid function."""
+  return 1.0 / (1.0 + np.exp(-z))
+
+def sigmoidPrime(z):
+  """Derivative of the sigmoid function."""
+  return sigmoid(z) * (1 - sigmoid(z))
