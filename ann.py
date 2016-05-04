@@ -31,18 +31,19 @@ class NeuralNetworkClassifier:
     self.s2 = 30
     self.s3 = len(self.legalLabels)
 
-    # Initialize bias vector and theta vector
+    # Initialize bias vector and theta vector for input level and hidden level
     self.bias1 = np.random.randn(self.s2, 1)
     self.bias2 = np.random.randn(self.s3, 1)
     self.theta1 = np.random.randn(self.s2, self.s1)
     self.theta2 = np.random.randn(self.s3, self.s2)
 
-    size = 10  # smaller section size
+    size = 10 if len(self.legalLabels) == 10 else 45# smaller section size
     # alpha = 3.0  # learning rate
     n = len(trainingData)
 
     for iteration in xrange(self.max_iterations):
-      print "Starting iteration ", iteration, "..."
+      if iteration % 10 == 0:
+        print "Starting iteration %d out of %d ..." % (iteration, self.max_iterations)
       # Seperate one big data set into smaller sets
       for begin in range(0, n, size):
 
@@ -55,7 +56,8 @@ class NeuralNetworkClassifier:
           features = trainingData[i]
           label = trainingLabels[i]
           x = np.reshape(features.values(), (len(self.features), 1))
-          y = np.zeros((10, 1))
+
+          y = np.zeros((10, 1)) if len(self.legalLabels) == 10 else np.zeros((2, 1))
           y[label] = 1.0
 
           # forward propagation

@@ -16,6 +16,7 @@ import mira
 import samples
 import sys
 import util
+import time
 
 TEST_SET_SIZE = 100
 DIGIT_DATUM_WIDTH=28
@@ -56,63 +57,120 @@ def basicFeatureExtractorFace(datum):
         features[(x,y)] = 0
   return features
 
-def enhancedFeatureExtractorDigit(datum):
+def concavityFeaturesDigit(datum):
   """
-  Your feature extraction playground.
-  
-  You should return a util.Counter() of features
-  for this datum (datum is of type samples.Datum).
-  
-  ## DESCRIBE YOUR ENHANCED FEATURES HERE...
-  1. Add a gradient feature for each pixel that checks whether a certain pixel's gradient is increasing
-  for both direction, if it's increasing, set 1, otherwise set 0.
-  2.
-  ##
+  Advanced feature extraction for digit image using Concavity Features
   """
-  # features =  basicFeatureExtractorDigit(datum)
-
-  "*** YOUR CODE HERE ***"
-
-  # # Compute edges
-  # for x in range(1, DIGIT_DATUM_WIDTH - 1):
-  #   for y in range(1, DIGIT_DATUM_HEIGHT - 1):
-  #     # if datum.getPixel(x, y) > 0:
-  #     features[("hasN", x, y)] = 1 if datum.getPixel(x, y - 1) > 0 else 0
-  #     features[("hasS", x, y)] = 1 if datum.getPixel(x, y + 1) > 0 else 0
-  #     features[("hasW", x, y)] = 1 if datum.getPixel(x - 1, y) > 0 else 0
-  #     features[("hasE", x, y)] = 1 if datum.getPixel(x + 1, y) > 0 else 0
-  #
-  #     # features[("horiz", x, y)] = int(datum.getPixel(x, y) > datum.getPixel(x - 1, y))
-  #     #
-  #     # features[("verti", x, y)] = int(datum.getPixel(x, y) > datum.getPixel(x, y - 1))
-
-  a = datum.getPixels()
+  # features = basicFeatureExtractorDigit(datum)
+  a = 4  # grid size
 
   features = util.Counter()
-  rowCounter = util.Counter()
-  colCounter = util.Counter()
+  gridDenseCounter = util.Counter()
+  gridRayCounter = util.Counter()
+
   for x in range(DIGIT_DATUM_WIDTH):
     for y in range(DIGIT_DATUM_HEIGHT):
       if datum.getPixel(x, y) > 0:
-        features[(x, y)] = 1
-        rowCounter[y] += 1
-        colCounter[x] += 1
-      else:
-        features[(x, y)] = 0
+        gridDenseCounter[(x / a, y / a, "density")] += 1
 
-      # Check whether the gradient is increasing
-      if x > 0 and y > 0:
-        features[("w2e", x, y)] = int(datum.getPixel(x, y) > datum.getPixel(x - 1, y)) # check from west to east
-        features[("s2n", x, y)] = int(datum.getPixel(x, y) > datum.getPixel(x, y - 1)) # check from south to north
-
-  # Check if each row or col has more than 10 pixels with gray or black
   for x in range(DIGIT_DATUM_WIDTH):
     for y in range(DIGIT_DATUM_HEIGHT):
-      features["row", y] = 1 if rowCounter[y] >= 10 else 0
-      features["col", x] = 1 if colCounter[x] >= 10 else 0
+      gridRayCounter[(x / a, y / a, "U")] += 1
+      gridRayCounter[(x / a, y / a, "D")] += 1
+      gridRayCounter[(x / a, y / a, "L")] += 1
+      gridRayCounter[(x / a, y / a, "R")] += 1
+      gridRayCounter[(x / a, y / a, "UL")] += 1
+      gridRayCounter[(x / a, y / a, "DL")] += 1
+      gridRayCounter[(x / a, y / a, "UR")] += 1
+      gridRayCounter[(x / a, y / a, "DR")] += 1
 
+  # vertical:
+  for x in range(DIGIT_DATUM_WIDTH):
+    for y in range(DIGIT_DATUM_HEIGHT):
+      if datum.getPixel(x, y) > 0:
+        # Block its vertical pixels, including itself
+        for i in range(y + 1):
+          gridRayCounter[(x / a, y / a, "U")] -= 1
+        for i in range(y, DIGIT_DATUM_HEIGHT):
+          gridRayCounter[(x / a, y / a, "D")] -= 1
+        break
+
+  # horizontal:
+  for y in range(DIGIT_DATUM_HEIGHT):
+    for x in range(DIGIT_DATUM_WIDTH):
+      if datum.getPixel(x, y) > 0:
+        # Block its horizontal pixels, including itself
+        for i in range(y + 1):
+          gridRayCounter[(x / a, y / a, "L")] -= 1
+        for i in range(y, DIGIT_DATUM_HEIGHT):
+          gridRayCounter[(x / a, y / a, "R")] -= 1
+        break
+
+  # Diagonal, down left to up right:
+  for x in range(DIGIT_DATUM_WIDTH):
+    if datum.getPixel(x, x) > 0:
+      # Block its horizontal pixels, including itself
+      for i in range(x + 1):
+        gridRayCounter[(x / a, x / a, "UR")] -= 1
+      for i in range(x, DIGIT_DATUM_WIDTH):
+        gridRayCounter[(x / a, x / a, "DL")] -= 1
+      break
+
+  # Diagonal, up left to down right:
+  for x in range(DIGIT_DATUM_WIDTH):
+    if datum.getPixel(x, DIGIT_DATUM_WIDTH - x - 1) > 0:
+      # Block its horizontal pixels, including itself
+      for i in range(x + 1):
+        gridRayCounter[(x / a, DIGIT_DATUM_WIDTH - x - 1 / a, "DR")] -= 1
+      for i in range(x, DIGIT_DATUM_WIDTH):
+        gridRayCounter[(x / a, DIGIT_DATUM_WIDTH - x - 1 / a, "UL")] -= 1
+      break
+
+  threshold = 3
+
+  for i in range(DIGIT_DATUM_WIDTH / a):
+    for j in range(DIGIT_DATUM_HEIGHT / a):
+      features[(i, j, "density")] = 1 if gridRayCounter[(i, j, "density")] >= 1 else 0
+      features[(i, j, "U")] = 1 if gridRayCounter[(i, j, "U")] >= threshold else 0
+      features[(i, j, "D")] = 1 if gridRayCounter[(i, j, "D")] >= threshold else 0
+      features[(i, j, "L")] = 1 if gridRayCounter[(i, j, "L")] >= threshold else 0
+      features[(i, j, "R")] = 1 if gridRayCounter[(i, j, "R")] >= threshold else 0
+      features[(i, j, "UL")] = 1 if gridRayCounter[(i, j, "UL")] >= threshold else 0
+      features[(i, j, "DL")] = 1 if gridRayCounter[(i, j, "DL")] >= threshold else 0
+      features[(i, j, "UR")] = 1 if gridRayCounter[(i, j, "UR")] >= threshold else 0
+      features[(i, j, "DR")] = 1 if gridRayCounter[(i, j, "DR")] >= threshold else 0
+
+  print "length of features:", len(features)
   return features
 
+def sobelEdgeFeaturesDigit(datum):
+  from scipy import signal
+  import numpy
+
+  features = util.Counter()
+  opx = numpy.array([[1, 0, -1],
+                     [2, 0, -2],
+                     [1, 0, -1]])
+  opy = numpy.array([[1, 2, 1],
+                     [0, 0, 0],
+                     [-1, -2, -1]])
+  pixels = numpy.empty([DIGIT_DATUM_WIDTH, DIGIT_DATUM_HEIGHT])
+
+  for x in range(DIGIT_DATUM_WIDTH):
+    for y in range(DIGIT_DATUM_HEIGHT):
+      pixels[x, y] = datum.getPixel(x, y)
+
+  gx = signal.convolve2d(pixels, opx)
+  gy = signal.convolve2d(pixels, opy)
+  gx = numpy.absolute(gx)
+  gy = numpy.absolute(gy)
+
+  for x in range(DIGIT_DATUM_WIDTH):
+    for y in range(DIGIT_DATUM_HEIGHT):
+      mag = gx[x, y] + gy[x, y]
+      features[(x, y, "edge")] = 1 if mag >= 3 else 0
+
+  return features
 
 def contestFeatureExtractorDigit(datum):
   """
@@ -166,19 +224,6 @@ def analysis(classifier, guesses, testLabels, testData, rawTestData, printImage)
   This code won't be evaluated. It is for your own optional use
   (and you can modify the signature if you want).
   """
-  
-  # Put any code here...
-  # Example of use:
-  for i in range(len(guesses)):
-      prediction = guesses[i]
-      truth = testLabels[i]
-      if (prediction != truth):
-          print "==================================="
-          print "Mistake on example %d" % i 
-          print "Predicted %d; truth is %d" % (prediction, truth)
-          print "Image: "
-          print rawTestData[i]
-          break
 
 
 ## =====================
@@ -225,7 +270,8 @@ def readCommand( argv ):
   parser.add_option('-c', '--classifier', help=default('The type of classifier'), choices=['mostFrequent', 'nb', 'naiveBayes', 'perceptron', 'mira', 'minicontest', 'ann'], default='mostFrequent')
   parser.add_option('-d', '--data', help=default('Dataset to use'), choices=['digits', 'faces'], default='digits')
   parser.add_option('-t', '--training', help=default('The size of the training set'), default=100, type="int")
-  parser.add_option('-f', '--features', help=default('Whether to use enhanced features'), default=False, action="store_true")
+  # parser.add_option('-f', '--features', help=default('Whether to use enhanced features'), default=False, action="store_true")
+  parser.add_option('-f', '--features', help=default('The type of features'), choices = ['basic', 'concavity', 'sobel'], default='basic')
   parser.add_option('-o', '--odds', help=default('Whether to compute odds ratios'), default=False, action="store_true")
   parser.add_option('-1', '--label1', help=default("First label in an odds ratio comparison"), default=0, type="int")
   parser.add_option('-2', '--label2', help=default("Second label in an odds ratio comparison"), default=1, type="int")
@@ -246,24 +292,28 @@ def readCommand( argv ):
   print "data:\t\t" + options.data
   print "classifier:\t\t" + options.classifier
   if not options.classifier == 'minicontest':
-    print "using enhanced features?:\t" + str(options.features)
+    print "Type of features:\t" + str(options.features)
   else:
     print "using minicontest feature extractor"
   print "training set size:\t" + str(options.training)
   if(options.data=="digits"):
     printImage = ImagePrinter(DIGIT_DATUM_WIDTH, DIGIT_DATUM_HEIGHT).printImage
-    if (options.features):
-      featureFunction = enhancedFeatureExtractorDigit
-    else:
+    if (options.features=="basic"):
       featureFunction = basicFeatureExtractorDigit
+    elif (options.features=="concavity"):
+      featureFunction = concavityFeaturesDigit
+    elif (options.features=="sobel"):
+      featureFunction = sobelEdgeFeaturesDigit
     if (options.classifier == 'minicontest'):
       featureFunction = contestFeatureExtractorDigit
   elif(options.data=="faces"):
     printImage = ImagePrinter(FACE_DATUM_WIDTH, FACE_DATUM_HEIGHT).printImage
-    if (options.features):
-      featureFunction = enhancedFeatureExtractorFace
-    else:
-      featureFunction = basicFeatureExtractorFace      
+    if (options.features == "basic"):
+      featureFunction = basicFeatureExtractorFace
+    elif (options.features == "concavity"):
+      featureFunction = concavityFeaturesDigit
+    elif (options.features == "sobel"):
+      featureFunction = sobelEdgeFeaturesDigit
   else:
     print "Unknown dataset", options.data
     print USAGE_STRING
@@ -378,11 +428,15 @@ def runClassifier(args, options):
   
   # Conduct training and testing
   print "Training..."
+  startTime = time.time()
   classifier.train(trainingData, trainingLabels, validationData, validationLabels)
+  print("Training Complete: %.3f seconds" % (time.time() - startTime))
+
   print "Validating..."
   guesses = classifier.classify(validationData)
   correct = [guesses[i] == validationLabels[i] for i in range(len(validationLabels))].count(True)
   print str(correct), ("correct out of " + str(len(validationLabels)) + " (%.1f%%).") % (100.0 * correct / len(validationLabels))
+
   print "Testing..."
   guesses = classifier.classify(testData)
   correct = [guesses[i] == testLabels[i] for i in range(len(testLabels))].count(True)

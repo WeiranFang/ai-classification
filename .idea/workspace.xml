@@ -2,7 +2,176 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7482da84-9830-41a1-96da-0c4dd0806af2" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classification.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/answers.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/classificationMethod.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/dataClassifier.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/minicontest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/mira.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/mostFrequent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/naiveBayes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/perceptron.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/runMinicontest.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/samples.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/util.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/2002_08_07_img_1578.0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/2002_09_05_img_12098.0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/2002_09_26_img_513.1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/2002_10_17_img_647.0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/2002_10_30_img_478.0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/2002_10_31_img_507.0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/2003_02_13_img_642.0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/2003_05_15_img_1197.0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/2003_07_04_img_502.0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/2003_07_12_img_589.0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/i1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/i2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/i3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/i4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/i5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/i6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/i7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/i8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/i9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/image_0056.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/image_0067.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/image_0128.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/image_0193.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/image_0196.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/image_0332.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img21_new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img23_new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img25_new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img26_new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img31_new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img32_new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img41.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img44.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img46.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img47.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img49.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img4_new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img51.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img52.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img53.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img54.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img55.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img56.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img58.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img59.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img61.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img62.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img63.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img64.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img65.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img66.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img67.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img68.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img69.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img70.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img71.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/imgMIRA.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/imgMIRAupdate.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/imgPupdate.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/imgsmooth1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/imgsmooth2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/imgsmooth3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/imgsmoothlaplace.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q2a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q2b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q2c.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q2d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q2e.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4a0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4a1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4a2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4a3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4a4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4a5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4a6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4a7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4a8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4a9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4b0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4b1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4b2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4b3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4b4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4b5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4b6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4b7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4b8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/q4b9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/tau.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.zip" afterPath="$PROJECT_DIR$/data.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/minicontest_output.pickle" afterPath="$PROJECT_DIR$/minicontest_output.pickle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/classification.iml" afterPath="$PROJECT_DIR$/.idea/classification.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ann.py" afterPath="$PROJECT_DIR$/ann.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/answers.py" afterPath="$PROJECT_DIR$/answers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classificationMethod.py" afterPath="$PROJECT_DIR$/classificationMethod.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commands.txt" afterPath="$PROJECT_DIR$/commands.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataClassifier.py" afterPath="$PROJECT_DIR$/dataClassifier.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/minicontest.py" afterPath="$PROJECT_DIR$/minicontest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mira.py" afterPath="$PROJECT_DIR$/mira.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mostFrequent.py" afterPath="$PROJECT_DIR$/mostFrequent.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/naiveBayes.py" afterPath="$PROJECT_DIR$/naiveBayes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/perceptron.py" afterPath="$PROJECT_DIR$/perceptron.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runMinicontest.py" afterPath="$PROJECT_DIR$/runMinicontest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/samples.py" afterPath="$PROJECT_DIR$/samples.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util.py" afterPath="$PROJECT_DIR$/util.py" />
     </list>
     <ignored path="classification.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,15 +191,39 @@
     <favorites_list name="classification" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42437923">
+    <splitter split-orientation="horizontal" split-proportion="0.5728234">
       <split-first>
-        <leaf>
-          <file leaf-file-name="naiveBayes.py" pinned="false" current-in-tab="true">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="naiveBayes.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/naiveBayes.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1695">
-                  <caret line="149" column="52" selection-start-line="149" selection-start-column="52" selection-end-line="149" selection-end-column="52" />
+                <state relative-caret-position="1410">
+                  <caret line="96" column="46" selection-start-line="96" selection-start-column="46" selection-end-line="96" selection-end-column="46" />
+                  <folding>
+                    <element signature="e#417#428#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="perceptron.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/perceptron.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="750">
+                  <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dataClassifier.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/dataClassifier.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-2699">
+                  <caret line="147" column="14" selection-start-line="147" selection-start-column="14" selection-end-line="147" selection-end-column="14" />
+                  <folding>
+                    <element signature="e#518#537#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -38,14 +231,15 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file leaf-file-name="dataClassifier.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/dataClassifier.py">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="ann.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/ann.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="560">
-                  <caret line="338" column="17" selection-start-line="338" selection-start-column="17" selection-end-line="338" selection-end-column="17" />
+                <state relative-caret-position="480">
+                  <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
                   <folding>
-                    <element signature="e#518#537#0" expanded="true" />
+                    <element signature="e#0#11#0" expanded="true" />
+                    <marker date="1462293667000" expanded="true" signature="328:426" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -55,7 +249,17 @@
             <entry file="file://$PROJECT_DIR$/samples.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="885">
-                  <caret line="59" column="28" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="28" />
+                  <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/util.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="14" column="2" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="2" />
                   <folding />
                 </state>
               </provider>
@@ -71,17 +275,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/util.py" />
-        <option value="$PROJECT_DIR$/dataClassifier.py" />
         <option value="$PROJECT_DIR$/naiveBayes.py" />
+        <option value="$PROJECT_DIR$/util.py" />
+        <option value="$PROJECT_DIR$/perceptron.py" />
+        <option value="$PROJECT_DIR$/ann.py" />
+        <option value="$PROJECT_DIR$/dataClassifier.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
-    <option name="y" value="-598" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="x" value="30" />
+    <option name="y" value="23" />
+    <option name="width" value="1250" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -108,33 +314,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classification" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classification" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classification" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Python.nb faces">
@@ -338,6 +527,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7482da84-9830-41a1-96da-0c4dd0806af2" name="Default" comment="" />
@@ -349,27 +541,35 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="-598" width="1920" height="1057" extended-state="6" />
+    <frame x="30" y="23" width="1250" height="777" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.066877306" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24328722" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5106383" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3795243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6783115" sideWeight="0.4893617" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3908997" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3908997" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -390,16 +590,286 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="159" column="5" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+        <state relative-caret-position="180">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+    <entry file="file://$PROJECT_DIR$/naiveBayes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="133" column="34" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="34" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#417#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naiveBayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="75" column="38" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="38" />
+          <folding>
+            <element signature="e#417#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/perceptron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataClassifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="92" column="39" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
+          <folding>
+            <element signature="e#518#537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ann.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1462293667000" expanded="true" signature="328:426" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naiveBayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="97" column="45" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
+          <folding>
+            <element signature="e#417#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/perceptron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minicontest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataClassifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3795">
+          <caret line="259" column="2" selection-start-line="259" selection-start-column="2" selection-end-line="259" selection-end-column="2" />
+          <folding>
+            <element signature="e#518#537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ann.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1462293667000" expanded="true" signature="328:426" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naiveBayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="97" column="45" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
+          <folding>
+            <element signature="e#417#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/perceptron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minicontest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataClassifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="77" column="36" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
+          <folding>
+            <element signature="e#518#537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ann.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1462293667000" expanded="true" signature="328:426" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naiveBayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#417#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/perceptron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minicontest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naiveBayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="83" column="24" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="24" />
+          <folding>
+            <element signature="e#417#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataClassifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+          <folding>
+            <element signature="e#518#537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/perceptron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naiveBayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="66" column="34" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
+          <folding>
+            <element signature="e#417#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataClassifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+          <folding>
+            <element signature="e#518#537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/perceptron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -412,23 +882,176 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="172" column="21" selection-start-line="172" selection-start-column="21" selection-end-line="172" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naiveBayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+          <folding>
+            <element signature="e#417#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dataClassifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="338" column="17" selection-start-line="338" selection-start-column="17" selection-end-line="338" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#518#537#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/naiveBayes.py">
+    <entry file="file://$PROJECT_DIR$/samples.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="149" column="52" selection-start-line="149" selection-start-column="52" selection-end-line="149" selection-end-column="52" />
+        <state relative-caret-position="885">
+          <caret line="59" column="28" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="172" column="21" selection-start-line="172" selection-start-column="21" selection-end-line="172" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naiveBayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+          <folding>
+            <element signature="e#417#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataClassifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#518#537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="59" column="28" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="172" column="21" selection-start-line="172" selection-start-column="21" selection-end-line="172" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="133" column="34" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runMinicontest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-211">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minicontest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/perceptron.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ann.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1462293667000" expanded="true" signature="328:426" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/naiveBayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1410">
+          <caret line="96" column="46" selection-start-line="96" selection-start-column="46" selection-end-line="96" selection-end-column="46" />
+          <folding>
+            <element signature="e#417#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataClassifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2699">
+          <caret line="147" column="14" selection-start-line="147" selection-start-column="14" selection-end-line="147" selection-end-column="14" />
+          <folding>
+            <element signature="e#518#537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
