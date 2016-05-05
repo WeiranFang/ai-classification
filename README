@@ -1,4 +1,5 @@
-# ai-classification
+README for classification
+-------------------------
 Hand written digits recognition and face recognition using three classifiers: Naive Bayes, Perceptron, Neural Network.
 
 Overview
