@@ -23,12 +23,16 @@ the DIGIT data and the FACE data. The data size of these two sets is shown as fo
 
 Usage
 -----
-  USAGE:      python dataClassifier.py <options>
-  EXAMPLES:   (1) python dataClassifier.py
+	USAGE:      python dataClassifier.py <options>
+  
+	EXAMPLES:   (1) python dataClassifier.py
+	
                   - trains the default mostFrequent classifier on the digit dataset
                   using the default 100 training examples and
                   then test the classifier on test data
+                  
               (2) python dataClassifier.py -c naiveBayes -d digits -t 1000 -f basic -k 2.5
+              
                   - would run the naive Bayes classifier on 1000 training examples
                   using the basicFeatureExtractorDigits function to get the features
                   on the digits dataset, would use the smoothing parameter equals to 2.5, would
@@ -37,21 +41,35 @@ Usage
 Options
 -------
   -h, --help            show this help message and exit
+  
   -c CLASSIFIER, --classifier=CLASSIFIER
+  
                         The type of classifier [Default: mostFrequent]
+                        
   -d DATA, --data=DATA  Dataset to use [Default: digits]
+  
   -t TRAINING, --training=TRAINING
+  
                         The size of the training set [Default: 100]
+                        
   -f FEATURES, --features=FEATURES
+  
                         The type of features [Default: basic]
+                        
   -w, --weights         Whether to print weights [Default: False]
+  
   -k SMOOTHING, --smoothing=SMOOTHING
+  
                         Smoothing parameter (ignored when using --autotune)
                         [Default: 2.0]
+                        
   -a, --autotune        Whether to automatically tune hyperparameters
                         [Default: False]
+                        
   -i ITERATIONS, --iterations=ITERATIONS
                         Maximum iterations to run training [Default: 3]
+                        
   -s TEST, --test=TEST  Amount of test data to use [Default: 100]
+  
   -p ALPHA, --alpha=ALPHA
                         Learning rate for neural network [Default: 1.0]
